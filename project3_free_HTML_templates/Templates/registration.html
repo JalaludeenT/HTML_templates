@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>REGISTRATION</title>
+    <style>
+        table,td
+        {
+        border:0px;
+        border-collapse:collapse;
+        }
+
+    </style>
+</head>
+<body style="background-color:#AAD802">
+<div class="container">
+    <form action="register" method="post">
+        {% csrf_token %}
+        <h3>REGISTRATION FORM</h3><br>
+        <table>
+            <tr><td><label>Username :</label></td><td><input type="text" name="Username" placeholder="Enter your Name"></td></tr>
+            <tr><td><label>First Name :</label></td><td><input type="text" name="First_Name" placeholder="Enter your First Name"></td></tr>
+            <tr><td><label>Last Name :</label></td><td><input type="text" name="Last_Name" placeholder="Enter your Last Name"></td></tr>
+            <tr><td><label>E-mail :</label></td><td><input type="email" name="Email" placeholder="Enter your E-mail"></td></tr>
+            <tr><td><label>Password :</label></td><td><input type="password" name="Password" placeholder="Enter a new password"></td></tr>
+            <tr><td><label>Conform password :</label></td><td><input type="password" name="Conform_password" placeholder="Enter password again"></td></tr>
+            <tr><td><input type="submit" value="SUBMIT"></td></tr>
+        </table>
+    </form>
+{% for msg in messages %}
+    <h2>{{msg}}</h2>
+{% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>LOGIN</title>
+    <style>
+        table,td
+        {
+        border:0px;
+        border-collapse:collapse;
+        }
+
+    </style>
+</head>
+<body style="background-color:#FF69B4">
+    <form action="login" method="post">
+        {% csrf_token %}
+        <h3>LOGIN</h3><br>
+        <label>Username :</label><input type="text" name="Username" placeholder="Enter your Name"><br>
+        <label>Password :</label><input type="password" name="Password" placeholder="Enter your password"><br>
+        <input type="submit" value="login">
+    </form>
+{% for msg in messages %}
+    <h2>{{msg}}</h2>
+{% endfor %}
+</body>
+</html>
